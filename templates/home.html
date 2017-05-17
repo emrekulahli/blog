@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+
+{% block title %} Anasayfa - {{block.super}} {% endblock %}
+
+{% block body %}
+
+
+
+    {% if request.user.is_authenticated %}
+        <div class="alert alert-warning alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          Merhaba {{ request.user.first_name }}
+        </div>
+    {% else %}
+        <div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      Merhaba Misafir
+    </div>
+    {% endif %}
+{%  endblock %}
+
